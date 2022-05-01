@@ -1,0 +1,16 @@
+.container {
+  width: max-content;
+  font: $font-small;
+  box-shadow: 0 0 40px rgba(86, 89, 146, 0.15);
+  white-space: nowrap;
+}
+
+.inner {
+  width: calc(100% + 6px);
+
+  & > div > div {
+    padding: 0 8px;
+    border: none !important;
+    border-radius: 10px !important;
+  }
+}

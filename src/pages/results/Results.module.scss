@@ -1,0 +1,17 @@
+.container {
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(4, min-content);
+  grid-template-rows: repeat(3, auto);
+  gap: 25px 20px;
+}
+
+.slider {
+  grid-column: 1 / -1;
+}
+
+.submit {
+  grid-column-end: -1;
+}
