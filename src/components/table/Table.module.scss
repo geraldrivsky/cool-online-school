@@ -5,6 +5,8 @@
   border-radius: 10px;
 }
 .header {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 160px) 1fr;
   padding: 15px 20px;
   background-color: #f3f6f9;
   border-radius: 6px;
@@ -15,6 +17,8 @@
   color: #464e5f;
 }
 .student {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 160px) 1fr;
   padding: 15px 20px;
   font: $font-small;
   color: #464e5f;

@@ -8,11 +8,11 @@ type Option = {
   isActive?: boolean;
 };
 
-type Props = { options: Option[] };
+type Props = { options: Option[]; className?: string };
 
-const VerticalSlider: FC<Props> = ({ options }) => {
+const VerticalSlider: FC<Props> = ({ options, className }) => {
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, className)}>
       {options.map(({ text, id, isActive = false }) => (
         <div
           key={id}

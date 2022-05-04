@@ -1,6 +1,8 @@
+import { ProgressBarColorThemes, ProgressBarSizes } from '@app/enums/Enums';
 import ButtonSubmit from '@components/button-submit/ButtonSubmit';
+import ProgressBar from '@components/progress-bar/ProgressBar';
 import CustomSelect from '@components/select/CustomSelect';
-import StudentsList from '@components/students-list/StudentsList';
+import Table from '@components/table/Table';
 import TextFieldCalendar from '@components/text-field-calendar/TextFieldCalendar';
 import VerticalSlider from '@components/vertical-slider/VerticalSlider';
 import CardStudent from '@containers/card-student/CardStudent';
@@ -16,6 +18,7 @@ export default function Results() {
           studentName: 'Днепровский Александр Алексеевич',
           geo: 'Москва',
         }}
+        className={styles.cardStudent}
       />
       <form className={styles.form} action="" method="post">
         <Slider
@@ -32,7 +35,10 @@ export default function Results() {
             { id: +new Date().toDateString(), text: 'Игра 3' },
           ]}
         />
-        <TextFieldCalendar text="Начало периода" />
+        <TextFieldCalendar
+          className={styles.textFieldCalendar}
+          text="Начало периода"
+        />
         <CustomSelect
           options={[{ label: 'Шаблон', value: 'pattern' }]}
           placeholder="Шаблон"
@@ -49,14 +55,22 @@ export default function Results() {
 
         <ButtonSubmit className={styles.submit} />
       </form>
+      <ProgressBar
+        title="Общий балл"
+        percentToComplete={50}
+        colorTheme={ProgressBarColorThemes.red}
+        size={ProgressBarSizes.big}
+        className={styles.progressBar}
+      />
       <Slider
         options={[
           { id: +new Date().toDateString(), text: 'Таблица' },
           { id: +new Date().toDateString(), isActive: true, text: 'График' },
         ]}
         colorTheme="red"
+        className={styles.bigSlider}
       />
-      <StudentsList
+      <Table
         students={[
           {
             fullName: 'Днепровский Александр Алексеевич',
@@ -91,6 +105,7 @@ export default function Results() {
             id: +new Date().toDateString(),
           },
         ]}
+        className={styles.table}
       />
       <VerticalSlider
         options={[
@@ -104,6 +119,7 @@ export default function Results() {
           { text: 'Параметр 4', id: +new Date().toDateString() },
           { text: 'Параметр 5', id: +new Date().toDateString() },
         ]}
+        className={styles.verticalSlider}
       />
     </div>
   );
