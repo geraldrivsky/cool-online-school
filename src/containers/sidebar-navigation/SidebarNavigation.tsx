@@ -1,18 +1,19 @@
 import { FC } from 'react';
-import NavigationLink from '@components/sidebar-navigation-item/SidebarNavigationItem';
+import { SidebarNavigationItem } from '@components';
 import { Routes } from '@constants/Routes';
+import { getRandomId } from '@utils/RandomId';
 import styles from './SidebarNavigation.module.scss';
 
-const Sidebar: FC = () => {
-  const { Index } = Routes;
+const SidebarNavigation: FC = () => {
+  const { Index, Payment, Results } = Routes;
   const links = [
     { label: 'Главная', href: Index, svgId: 'home' },
     { label: 'Расписание занятий', href: Index, svgId: 'schedule' },
     { label: 'Ваши достижения', href: Index, svgId: 'achievements' },
-    { label: 'Ваши результаты', href: Index, svgId: 'results' },
+    { label: 'Ваши результаты', href: Results, svgId: 'results' },
     { label: 'Игры', href: Index, svgId: 'games' },
     { label: 'Личные данные', href: Index, svgId: 'personal-data' },
-    { label: 'Оплата', href: Index, svgId: 'payment' },
+    { label: 'Оплата', href: Payment, svgId: 'payment' },
   ];
   return (
     <aside className={styles.sidebar}>
@@ -569,9 +570,9 @@ const Sidebar: FC = () => {
           </symbol>
         </svg>
         {links.map((link) => (
-          <NavigationLink
+          <SidebarNavigationItem
             svgId={link.svgId}
-            key={+new Date().toDateString()}
+            key={getRandomId()}
             link={link}
             wrapperClassName={styles.linkWrapper}
             imageClassName={styles.linkImage}
@@ -587,4 +588,4 @@ const Sidebar: FC = () => {
   );
 };
 
-export default Sidebar;
+export default SidebarNavigation;

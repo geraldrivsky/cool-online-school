@@ -1,21 +1,9 @@
 import classNames from 'classnames';
 import { FC } from 'react';
-import styles from './Table.module.scss';
+import { StudentsTableProps } from '@app/types/Props';
+import styles from './StudentsTable.module.scss';
 
-type IStudent = {
-  fullName: string;
-  studyPeriodBeginning: string;
-  studyPeriodEnd: string;
-  group: number;
-  id: number;
-};
-
-type Props = {
-  students: IStudent[];
-  className?: string;
-};
-
-const Table: FC<Props> = ({ students, className }) => {
+const StudentsTable: FC<StudentsTableProps> = ({ students, className }) => {
   return (
     <div className={classNames(styles.container, className)}>
       <div className={styles.header}>
@@ -38,4 +26,4 @@ const Table: FC<Props> = ({ students, className }) => {
   );
 };
 
-export default Table;
+export default StudentsTable;
