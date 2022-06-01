@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Select from 'react-select';
-import styles from './CustomSelect.module.scss';
+import cl from './CustomSelect.module.scss';
 
 interface Props {
   options: {
@@ -8,17 +8,23 @@ interface Props {
     value: string;
   }[];
   placeholder: string;
+  size?: string;
 }
 
-const CustomSelect: FC<Props> = ({ options, placeholder }) => {
+const CustomSelect: FC<Props> = ({
+  options,
+  placeholder,
+  size = 'sizeAuto',
+}) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.inner}>
+    <div className={cl.container}>
+      <div className={cl.inner}>
         <Select
           instanceId={Symbol().toString()}
           placeholder={placeholder}
           options={options}
           components={{ IndicatorSeparator: () => null }}
+          className={cl[size]}
         />
       </div>
     </div>

@@ -1,0 +1,63 @@
+$widthBlock: 1360px;
+
+.innerContent {
+  flex-grow: 1;
+  padding: 25px 0 20px 20px;
+  background: url(#{$path-svg}/pages/payment-bg.svg) right center no-repeat;
+
+  & .wrapBlock {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 23px;
+    width: $widthBlock;
+
+    & .infoBlock1 {
+      width: 33%;
+    }
+
+    & .infoBlock2 {
+      width: 33%;
+    }
+
+    & .infoBlock3 {
+      width: 33%;
+
+      & .btnBlock {
+        margin-top: 24px;
+        display: flex;
+        justify-content: flex-end;
+
+        & button {
+          margin-left: 20px;
+        }
+
+        & .buttonSize {
+          padding: 11px 33px;
+        }
+      }
+    }
+  }
+
+  & .tableBlock {
+    width: $widthBlock;
+    display: flex;
+
+    & .tableContent {
+      & .ratesTable {
+        color: #ffffff;
+      }
+    }
+
+    & .rightBlock {
+      width: 287px;
+      margin-left: 20px;
+    }
+  }
+
+  & .pagination {
+    width: $widthBlock;
+    display: flex;
+    margin: 42px 0 58px 0;
+    justify-content: center;
+  }
+}
