@@ -1,4 +1,5 @@
-import StudentCard from '@containers/student-card/StudentCard';
+import { StudentStatuses } from '@app/enums';
+import { StudentCard } from '@components';
 import BlockAchievement from '@pages/achievements/BlockAchievement';
 import best10 from '@svgs/games/best10.svg';
 import best20 from '@svgs/games/best20.svg';
@@ -104,9 +105,9 @@ const IndexPage = () => {
         <StudentCard
           options={{
             studentName: 'Днепровский Александр Алексеевич',
-            status: 'Новичок',
+            status: StudentStatuses.beginner,
             pointsNumber: 1,
-            geo: 'Москва',
+            city: 'Москва',
           }}
         />
       </div>

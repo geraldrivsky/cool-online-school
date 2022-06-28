@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import { ButtonColorThemes, RatePlans } from '@app/enums/Enums';
-import { Button } from '@components';
+import { ButtonColorThemes, TeacherStatuses } from '@app/enums';
+import { Button, TeachersTable } from '@components';
 import CustomPagination from '@components/custom-pagination/CustomPagination';
 import InformationItem from '@components/information-item/InformationItem';
-import { RatesTable } from '@containers';
 import { city, group, status } from '@mock/moks-data-select';
 import styles from './TeachersReport.module.scss';
 
@@ -44,26 +43,109 @@ const IndexPage: FC = () => {
             <Button
               className={styles.buttonSize}
               colorTheme={ButtonColorThemes.green}
-              text="Найти"
-            />
-            <Button className={styles.buttonSize} text="Выгрузить в Excel" />
+            >
+              Найти
+            </Button>
+            <Button className={styles.buttonSize}>Выгрузить в Excel</Button>
           </div>
         </div>
       </div>
       <div className={styles.tableBlock}>
         <div className={styles.tableContent}>
-          <RatesTable
-            rates={[
+          <TeachersTable
+            rows={[
               {
                 id: 1,
-                moneyAmount: 5000,
-                description: 'Оплата за март. Тариф “Индивидуальный”',
-                paymentDate: new Date(),
-                ratePlan: RatePlans.personal,
-                status: 'success',
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
+              },
+              {
+                id: 2,
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
+              },
+
+              {
+                id: 3,
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
+              },
+              {
+                id: 4,
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
+              },
+              {
+                id: 5,
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
+              },
+              {
+                id: 6,
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
+              },
+              {
+                id: 7,
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
+              },
+              {
+                id: 8,
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
+              },
+              {
+                id: 9,
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
+              },
+              {
+                id: 10,
+                fullName: 'Днепровский А.А.',
+                lessonsAmount: 122,
+                registrationDate: new Date(),
+                workedHoursAmount: 236,
+                childrenNumber: 12,
+                status: TeacherStatuses.active,
               },
             ]}
-            className={styles.ratesTable}
           />
         </div>
       </div>

@@ -1,6 +1,16 @@
-import { ProgressBarColorThemes, ProgressBarSizes } from '@app/enums/Enums';
-import { ProgressBar, StudentsTable, VerticalSlider } from '@components';
-import { StudentCard, Slider, GetResultsForm } from '@containers';
+import {
+  ProgressBarColorThemes,
+  ProgressBarSizes,
+  StudentStatuses,
+} from '@app/enums';
+import {
+  StudentCard,
+  Slider,
+  GetResultsForm,
+  ProgressBar,
+  StudentsTable,
+  VerticalSlider,
+} from '@components';
 import { getRandomId } from '@utils/RandomId';
 import cl from './Results.module.scss';
 
@@ -9,15 +19,16 @@ export default function Results() {
     <div className={cl.container}>
       <StudentCard
         options={{
-          status: 'Новичок',
+          status: StudentStatuses.beginner,
           studentName: 'Днепровский Александр Алексеевич',
-          geo: 'Москва',
+          city: 'Москва',
         }}
         className={cl.cardStudent}
       />
       <GetResultsForm
-        onSubmit={function () {
-          throw new Error('Function not implemented.');
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log(e, 'Form has submitted');
         }}
       />
       <ProgressBar
