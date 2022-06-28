@@ -24,7 +24,7 @@ const ScheduleLesson: FC<IScheduleLesson> = ({
   const lessonEndDateTime = new Date(startDateTime);
   lessonEndDateTime.setHours(startHours + 1);
 
-  let top = (startHours - 7) * 86;
+  let top = (startHours - 7) * 86 - 3;
   top += startMinutes === 30 ? 43 : 0;
 
   const dateOffset = startDate - mondayDate.getDate();

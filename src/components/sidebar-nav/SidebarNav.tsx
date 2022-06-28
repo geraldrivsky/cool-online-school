@@ -4,12 +4,13 @@ import { Routes } from '@constants/Routes';
 import cl from './SidebarNav.module.scss';
 
 const SidebarNav: FC = () => {
-  const { Index, Payment, Results, Achievements, Contacts, Games } = Routes;
+  const { Index, Payment, Results, Achievements, Contacts, Games, Schedule } =
+    Routes;
   const links = [
     { label: 'Главная', href: Index, svgId: 'home' },
     {
       label: 'Расписание занятий',
-      href: Index,
+      href: Schedule,
       svgId: 'schedule',
     },
     {
